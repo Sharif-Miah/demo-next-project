@@ -10,24 +10,36 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
-  const menuItem = <>
-  
-  <li><Link href="/">Home</Link></li>
-  <li><Link href="/about">About</Link></li>
-  <li><Link href="/service">Service</Link></li>
-  <li><Link href="/blog">Blog</Link></li>
-  <li><Link href="/contact">Contact</Link></li>
-  <li><Link href="/login">Login</Link></li>
-  <li><Link href="/register">Register</Link></li>
-
-  </>
-
+  const menuItem = (
+    <>
+      <li>
+        <Link href="/">Home</Link>
+      </li>
+      <li>
+        <Link href="/about">About</Link>
+      </li>
+      <li>
+        <Link href="/service">Service</Link>
+      </li>
+      <li>
+        <Link href="/blog">Blog</Link>
+      </li>
+      <li>
+        <Link href="/contact">Contact</Link>
+      </li>
+      <li>
+        <Link href="/login">Login</Link>
+      </li>
+      <li>
+        <Link href="/register">Register</Link>
+      </li>
+    </>
+  );
 
   return (
-    <html lang="en" className="max-w-7xl mx-auto">
+    <html lang="en" className="max-w-7xl mx-auto bg-[#112]">
       <body className={inter.className}>
-        <div className="navbar bg-base-100">
+        <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -52,20 +64,24 @@ export default function RootLayout({ children }) {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-white rounded-box w-52"
               >
                 {menuItem}
               </ul>
             </div>
-            <Link href="/" className="btn btn-ghost text-xl">Sharif Miah</Link>
+            <Link href="/" className="btn btn-ghost text-xl text-white">
+              Sharif Miah
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              {menuItem}
-            </ul>
+            <ul className="menu menu-horizontal px-1 text-white">{menuItem}</ul>
           </div>
           <div className="navbar-end">
-            <a className="btn">Button</a>
+            <Link href="/contact">
+              <button className=" px-8 py-2 font-bold border rounded-3xl text-white bg-[#F3B90B] hover:bg-[#112] hover:border-[#F3B90B]hover:tranparent shadow-lg shadow-[#F3B90B]">
+                Hire Me
+              </button>
+            </Link>
           </div>
         </div>
 
